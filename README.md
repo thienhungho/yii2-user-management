@@ -59,7 +59,7 @@ Add module UserProfile to your `AppConfig` file.
 'modules'          => [
     ...
     'user-profile' => [
-        'class' => 'BaseApp\ums\modules\UserProfile\UserProfile',
+        'class' => '\thienhungho\UserManagement\modules\UserProfile\UserProfile',
         'layout' => '@backend/views/layouts/main2',
     ],
     ...
