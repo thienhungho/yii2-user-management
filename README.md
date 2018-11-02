@@ -21,14 +21,17 @@ or add
 
 to the require section of your `composer.json` file.
 
+Usage
+------------
+
+add components user to your `main.php` file.
+
 ```php
 ...
 'components'          => [
     ...
     'user' => [
         'identityClass' => '\ThienHungHo\models\User',
-        'enableAutoLogin' => true,
-        'identityCookie' => ['name' => '_identity', 'httpOnly' => true],
     ],
     ...
 ],
