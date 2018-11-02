@@ -41,7 +41,7 @@ function is_login()
 /**
  * @return null
  */
-function get_current_user()
+function current_user()
 {
     if (is_login()) {
         return Yii::$app->user;
