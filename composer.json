@@ -1,0 +1,22 @@
+{
+    "name": "thienhungho/yii2-user-management",
+    "description": "Yii2 User Management",
+    "type": "yii2-extension",
+    "keywords": ["yii2","extension","user","management"],
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "thienhungho",
+            "email": "thienhungho@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "yiisoft/yii2": "~2.0.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "ThienHungHo\\": "src/"
+        }
+    }
+}
