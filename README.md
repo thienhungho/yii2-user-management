@@ -66,3 +66,17 @@ Add module UserProfile to your `AppConfig` file.
 ],
 ...
 ```
+Models
+------------
+
+[User](https://github.com/thienhungho/yii2-user-management/blob/master/docs/models/User.php)
+
+Modules
+------------
+
+[UserBase](https://github.com/thienhungho/yii2-user-management/tree/master/src/modules/UserBase), [UserManage](https://github.com/thienhungho/yii2-user-management/tree/master/src/modules/UserManage), [UserProfile](https://github.com/thienhungho/yii2-user-management/tree/master/src/modules/UserProfile), [UserSetting](https://github.com/thienhungho/yii2-user-management/tree/master/src/modules/UserSetting)
+
+Functions
+------------
+
+[Core](https://github.com/thienhungho/yii2-user-management/tree/master/src/functions/core.php)

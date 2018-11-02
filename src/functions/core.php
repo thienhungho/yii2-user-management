@@ -97,3 +97,71 @@ function get_current_user_avatar()
 
     return null;
 }
+
+/**
+ * @param $user_id
+ * @param $section
+ * @param $key
+ * @param $default
+ *
+ * @return mixed
+ */
+function get_user_setting_value($user_id, $section, $key, $default)
+{
+    $userSetting = \thienhungho\UserManagement\modules\UserSetting\UserSetting::find()
+        ->select('value')
+        ->where(['user_id' => $user_id])
+        ->andWhere(['section' => $section])
+        ->andWhere(['key' => $key])
+        ->asArray()
+        ->one();
+    return empty($userSetting) ? $default : $userSetting['value'];
+}
+
+/**
+ * @param $section
+ * @param $key
+ * @param $default
+ *
+ * @return mixed
+ */
+function get_current_user_setting_value($section, $key, $default)
+{
+    if (is_login()) {
+        return get_user_setting_value(get_current_user_id(), $section, $key, $default);
+    } else {
+        return $default;
+    }
+}
+
+/**
+ * @param $user_id
+ * @param $section
+ * @param $key
+ * @param $value
+ *
+ * @return bool
+ *
+ */
+function set_user_setting($user_id, $section, $key, $value)
+{
+    $user_setting = new \thienhungho\UserManagement\modules\UserSetting\UserSetting([
+        'user_id' => $user_id,
+        'section' => $section,
+        'key' => $key,
+        'value' => $value
+    ]);
+    return $user_setting->save();
+}
+
+/**
+ * @param $section
+ * @param $key
+ * @param $value
+ *
+ * @return bool
+ */
+function set_current_user_setting($section, $key, $value)
+{
+    return set_user_setting(get_current_user_id(), $section, $key, $value);
+}
