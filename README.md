@@ -20,3 +20,17 @@ or add
 ```
 
 to the require section of your `composer.json` file.
+
+```php
+...
+'components'          => [
+    ...
+    'user' => [
+        'identityClass' => '\ThienHungHo\models\User',
+        'enableAutoLogin' => true,
+        'identityCookie' => ['name' => '_identity', 'httpOnly' => true],
+    ],
+    ...
+],
+...
+```

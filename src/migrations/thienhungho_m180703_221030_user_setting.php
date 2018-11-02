@@ -1,6 +1,6 @@
 <?php
 
-namespace ThienHungHo\migrations;
+namespace thienhungho\migrations;
 
 use yii\db\Migration;
 

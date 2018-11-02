@@ -1,5 +1,5 @@
 <?php
-namespace ThienHungHo\models;
+namespace thienhungho\models;
 
 /**
  * User model
