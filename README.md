@@ -24,14 +24,43 @@ to the require section of your `composer.json` file.
 Usage
 ------------
 
-add components user to your `main.php` file.
+Add components user to your `AppConfig` file.
 
 ```php
 ...
 'components'          => [
     ...
     'user' => [
-        'identityClass' => '\ThienHungHo\models\User',
+        'identityClass' => '\thienhungho\UserManagement\models\User',
+    ],
+    ...
+],
+...
+```
+
+Add module UserManage to your `AppConfig` file.
+
+```php
+...
+'modules'          => [
+    ...
+    'user-manage' => [
+        'class' => '\thienhungho\UserManagement\modules\UserManage\UserManage',
+    ],
+    ...
+],
+...
+```
+
+Add module UserProfile to your `AppConfig` file.
+
+```php
+...
+'modules'          => [
+    ...
+    'user-profile' => [
+        'class' => 'BaseApp\ums\modules\UserProfile\UserProfile',
+        'layout' => '@backend/views/layouts/main2',
     ],
     ...
 ],
