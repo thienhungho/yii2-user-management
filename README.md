@@ -1,6 +1,6 @@
 Yii2 Helper Funtions
 ====================
-Helper functions for Yii2
+User Management System for Yii2
 
 Installation
 ------------
@@ -10,13 +10,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require --prefer-dist thienhungho/yii2-helper-functions "*"
+php composer.phar require --prefer-dist thienhungho/yii2-user-management "*"
 ```
 
 or add
 
 ```
-"thienhungho/yii2-helper-functions": "*"
+"thienhungho/yii2-user-management": "*"
 ```
 
 to the require section of your `composer.json` file.
