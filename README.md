@@ -1,4 +1,4 @@
-Yii2 User Management System Funtions
+Yii2 User Management System
 ====================
 User Management System for Yii2
 
