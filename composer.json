@@ -16,7 +16,7 @@
     },
     "autoload": {
         "psr-4": {
-            "thienhungho\\": "src/"
+            "thienhungho\\UserManagement": "src/"
         },
         "files": ["src/functions/core.php"]
     }

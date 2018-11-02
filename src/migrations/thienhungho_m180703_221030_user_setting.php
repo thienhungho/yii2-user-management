@@ -7,7 +7,7 @@ use yii\db\Migration;
 /**
  * Class m180527_101519_term_relationships
  */
-class mthienhungho_m180703_221030_user_setting extends Migration
+class thienhungho_m180703_221030_user_setting extends Migration
 {
     /**
      * {@inheritdoc}

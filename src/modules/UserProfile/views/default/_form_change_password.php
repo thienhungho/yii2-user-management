@@ -1,0 +1,34 @@
+<?php $form = \kartik\form\ActiveForm::begin(['id' => 'change-password-form', 'action' => ['change-password'] ]); ?>
+
+<?= $form->field($changePasswordForm, 'username')->hiddenInput(['value' => Yii::$app->user->identity->username])->label(false) ?>
+
+<?= $form->field($changePasswordForm, 'password', [
+    'addon' => ['prepend' => ['content' => '<span class="fa fa-lock"></span>']],
+])->passwordInput([
+    'maxlength'   => true,
+    'placeholder' => __t('app', 'Password'),
+    'value'       => '',
+]) ?>
+
+<?= $form->field($changePasswordForm, 'new_password', [
+    'addon' => ['prepend' => ['content' => '<span class="fa fa-lock"></span>']],
+])->passwordInput([
+    'maxlength'   => true,
+    'placeholder' => __t('app', 'New Password'),
+    'value'       => '',
+]) ?>
+
+<?= $form->field($changePasswordForm, 're_new_password', [
+    'addon' => ['prepend' => ['content' => '<span class="fa fa-lock"></span>']],
+])->passwordInput([
+    'maxlength'   => true,
+    'placeholder' => __t('app', 'Confirm Password'),
+    'value'       => '',
+]) ?>
+
+<div class="form-group">
+    <?= \yii\helpers\Html::submitButton(__t('app', 'Change Password'), ['class' => 'btn green', 'name' => 'change-password-button']) ?>
+    <?= \yii\helpers\Html::resetButton(__t('app', 'Cancel'), ['class' => 'btn default', 'name' => 'change-password-button']) ?>
+</div>
+
+<?php \kartik\form\ActiveForm::end(); ?>

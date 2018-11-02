@@ -1,5 +1,5 @@
 <?php
-namespace thienhungho\models;
+namespace thienhungho\UserManagement\models;
 
 /**
  * User model
@@ -15,7 +15,7 @@ namespace thienhungho\models;
  * @property integer $updated_at
  * @property string $password write-only password
  */
-class User extends \BaseApp\ums\modules\UserBase\User
+class User extends \thienhungho\UserManagement\modules\UserBase\User
 {
 
 }
