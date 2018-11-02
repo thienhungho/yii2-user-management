@@ -1,4 +1,4 @@
-Yii2 Helper Funtions
+Yii2 User Management System Funtions
 ====================
 User Management System for Yii2
 
