@@ -9,8 +9,8 @@
 ?>
 
 <div class="form-group">
-    <?= \yii\helpers\Html::submitButton(__t('app', 'Change Avatar'), ['class' => 'btn green', 'name' => 'change-password-button']) ?>
-    <?= \yii\helpers\Html::resetButton(__t('app', 'Cancel'), ['class' => 'btn default', 'name' => 'change-password-button']) ?>
+    <?= \yii\helpers\Html::submitButton(t('app', 'Change Avatar'), ['class' => 'btn green', 'name' => 'change-password-button']) ?>
+    <?= \yii\helpers\Html::resetButton(t('app', 'Cancel'), ['class' => 'btn default', 'name' => 'change-password-button']) ?>
 </div>
 
 <?php \kartik\form\ActiveForm::end(); ?>

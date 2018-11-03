@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model common\modules\auth\AuthItem */
 
-$this->title = __t('app', 'Create Auth Item');
-$this->params['breadcrumbs'][] = ['label' => __t('app', 'Auth Item'), 'url' => ['index']];
+$this->title = t('app', 'Create Auth Item');
+$this->params['breadcrumbs'][] = ['label' => t('app', 'Auth Item'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="auth-item-create">

@@ -24,7 +24,7 @@ use kartik\grid\GridView;
         'description:ntext',
         [
             'attribute' => 'ruleName.name',
-            'label' => __t('app', 'Rule Name'),
+            'label' => t('app', 'Rule Name'),
         ],
         'data',
     ];

@@ -22,46 +22,46 @@ $model->password_hash = '';
         'addon' => ['prepend' => ['content' => '<span class="fa fa-user"></span>']],
     ])->textInput([
         'maxlength'   => true,
-        'placeholder' => __t('app', 'Username'),
+        'placeholder' => t('app', 'Username'),
     ]) ?>
 
     <?= $form->field($model, 'email', [
         'addon' => ['prepend' => ['content' => '<span class="fa fa-envelope"></span>']],
     ])->textInput([
         'maxlength'   => true,
-        'placeholder' => __t('app', 'Email'),
+        'placeholder' => t('app', 'Email'),
     ]) ?>
 
     <?= $form->field($model, 'password_hash', [
         'addon' => ['prepend' => ['content' => '<span class="fa fa-envelope"></span>']],
     ])->passwordInput([
         'maxlength'   => true,
-        'placeholder' => __t('app', 'Password'),
+        'placeholder' => t('app', 'Password'),
     ]) ?>
 
     <?= $form->field($model, 'phone', [
         'addon' => ['prepend' => ['content' => '<span class="fa fa-phone"></span>']],
     ])->textInput([
         'maxlength'   => true,
-        'placeholder' => __t('app', 'Phone'),
+        'placeholder' => t('app', 'Phone'),
     ]) ?>
 
     <?= $form->field($model, 'full_name', [
         'addon' => ['prepend' => ['content' => '<span class="fa fa-user"></span>']],
     ])->textInput([
         'maxlength'   => true,
-        'placeholder' => __t('app', 'Full Name'),
+        'placeholder' => t('app', 'Full Name'),
     ]) ?>
 
     <?= $form->field($model, 'facebook_url', [
         'addon' => ['prepend' => ['content' => '<span class="fa fa-facebook-official"></span>']],
     ])->textInput([
         'maxlength'   => true,
-        'placeholder' => __t('app', 'Facebook Url'),
+        'placeholder' => t('app', 'Facebook Url'),
     ]) ?>
 
     <?= $form->field($model, 'birth_date')->widget(\kartik\widgets\DatePicker::classname(), [
-        'options' => ['placeholder' => __t('app', 'Choose Birth Date')],
+        'options' => ['placeholder' => t('app', 'Choose Birth Date')],
         'pluginOptions' => [
             'autoclose' => true,
             'format' => 'yyyy-mm-dd'
@@ -72,24 +72,24 @@ $model->password_hash = '';
         'addon' => ['prepend' => ['content' => '<span class="fa fa-building"></span>']],
     ])->textInput([
         'maxlength'   => true,
-        'placeholder' => __t('app', 'Company'),
+        'placeholder' => t('app', 'Company'),
     ]) ?>
 
     <?= $form->field($model, 'tax_number', [
         'addon' => ['prepend' => ['content' => '<span class="fa fa-bank"></span>']],
-    ])->textInput(['maxlength' => true, 'placeholder' => __t('app', 'Tax Number'),]) ?>
+    ])->textInput(['maxlength' => true, 'placeholder' => t('app', 'Tax Number'),]) ?>
 
     <?= $form->field($model, 'job', [
         'addon' => ['prepend' => ['content' => '<span class="fa fa-home"></span>']],
-    ])->textInput(['maxlength' => true, 'placeholder' => __t('app', 'Job'),]) ?>
+    ])->textInput(['maxlength' => true, 'placeholder' => t('app', 'Job'),]) ?>
 
     <?= $form->field($model, 'address', [
         'addon' => ['prepend' => ['content' => '<span class="fa fa-map-marker"></span>']],
-    ])->textarea(['maxlength' => true, 'placeholder' => __t('app', 'Address'),]) ?>
+    ])->textarea(['maxlength' => true, 'placeholder' => t('app', 'Address'),]) ?>
 
     <?= $form->field($model, 'bio', [
         'addon' => ['prepend' => ['content' => '<span class="fa fa-quote-left"></span>']],
-    ])->textarea(['maxlength' => true, 'placeholder' => __t('app', 'Bio'),]) ?>
+    ])->textarea(['maxlength' => true, 'placeholder' => t('app', 'Bio'),]) ?>
 
     <?= $form->field($model, 'avatar')->fileInput()
         ->widget(\kartik\file\FileInput::classname(), [
@@ -107,12 +107,12 @@ $model->password_hash = '';
 
     <div class="form-group">
     <?php if(Yii::$app->controller->action->id != 'save-as-new'): ?>
-        <?= Html::submitButton($model->isNewRecord ? __t('app', 'Create') : __t('app', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($model->isNewRecord ? t('app', 'Create') : t('app', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     <?php endif; ?>
     <?php if(Yii::$app->controller->action->id != 'create'): ?>
-        <?= Html::submitButton(__t('app', 'Save As New'), ['class' => 'btn btn-info', 'value' => '1', 'name' => '_asnew']) ?>
+        <?= Html::submitButton(t('app', 'Save As New'), ['class' => 'btn btn-info', 'value' => '1', 'name' => '_asnew']) ?>
     <?php endif; ?>
-        <?= Html::a(__t('app', 'Cancel'), request()->referrer , ['class'=> 'btn btn-danger']) ?>
+        <?= Html::a(t('app', 'Cancel'), request()->referrer , ['class'=> 'btn btn-danger']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

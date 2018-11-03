@@ -92,8 +92,8 @@ class UserController extends Controller
                     'type'     => 'success',
                     'duration' => 3000,
                     'icon'     => 'glyphicon glyphicon-ok-sign',
-                    'title'    => \__t('app', 'Congratulations!'),
-                    'message'  => \__t('app','Your content has been saved'),
+                    'title'    => \t('app', 'Congratulations!'),
+                    'message'  => \t('app','Your content has been saved'),
                 ]);
                 return $this->redirect(['update', 'id' => $model->id]);
             } else {
@@ -101,8 +101,8 @@ class UserController extends Controller
                     'type'     => 'danger',
                     'duration' => 3000,
                     'icon'     => 'glyphicon glyphicon-remove-sign',
-                    'title'    => \__t('app', 'An error has occurred!'),
-                    'message'  => \__t('app','Your content has not been saved'),
+                    'title'    => \t('app', 'An error has occurred!'),
+                    'message'  => \t('app','Your content has not been saved'),
                 ]);
             }
         }
@@ -128,7 +128,7 @@ class UserController extends Controller
         }
 
         if (in_array('admin', $model->getRole()) && !is_role('admin')) {
-            throw new \yii\web\HttpException(403, __t('app', 'You are not allowed to perform this action.'));
+            throw new \yii\web\HttpException(403, t('app', 'You are not allowed to perform this action.'));
         }
 
         if ($model->loadAll(request()->post())) {
@@ -138,8 +138,8 @@ class UserController extends Controller
                     'type'     => 'success',
                     'duration' => 3000,
                     'icon'     => 'glyphicon glyphicon-ok-sign',
-                    'title'    => \__t('app', 'Congratulations!'),
-                    'message'  => \__t('app','Your content has been saved'),
+                    'title'    => \t('app', 'Congratulations!'),
+                    'message'  => \t('app','Your content has been saved'),
                 ]);
                 return $this->redirect(['update', 'id' => $model->id]);
             } else {
@@ -147,8 +147,8 @@ class UserController extends Controller
                     'type'     => 'danger',
                     'duration' => 3000,
                     'icon'     => 'glyphicon glyphicon-remove-sign',
-                    'title'    => \__t('app', 'An error has occurred!'),
-                    'message'  => \__t('app','Your content has not been saved'),
+                    'title'    => \t('app', 'An error has occurred!'),
+                    'message'  => \t('app','Your content has not been saved'),
                 ]);
             }
         }
@@ -168,23 +168,23 @@ class UserController extends Controller
     {
         $model = $this->findModel($id);
         if (in_array('admin', $model->getRole()) && !is_role('admin')) {
-            throw new \yii\web\HttpException(403, __t('app', 'You are not allowed to perform this action.'));
+            throw new \yii\web\HttpException(403, t('app', 'You are not allowed to perform this action.'));
         }
         if ($model->deleteWithRelated()) {
             set_flash('success_delete_post', $array = [
                 'type'     => 'success',
                 'duration' => 3000,
                 'icon'     => 'glyphicon glyphicon-ok-sign',
-                'title'    => \__t('app', 'Congratulations!'),
-                'message'  => \__t('app','Your content has been removed'),
+                'title'    => \t('app', 'Congratulations!'),
+                'message'  => \t('app','Your content has been removed'),
             ]);
         } else {
             set_flash('error_delete_post', $array = [
                 'type'     => 'danger',
                 'duration' => 3000,
                 'icon'     => 'glyphicon glyphicon-remove-sign',
-                'title'    => \__t('app', 'An error has occurred!'),
-                'message'  => \__t('app','Your content has not been removed'),
+                'title'    => \t('app', 'An error has occurred!'),
+                'message'  => \t('app','Your content has not been removed'),
             ]);
         }
 
@@ -265,8 +265,8 @@ class UserController extends Controller
                     'type'     => 'success',
                     'duration' => 3000,
                     'icon'     => 'glyphicon glyphicon-ok-sign',
-                    'title'    => \__t('app', 'Congratulations!'),
-                    'message'  => \__t('app','Your content has been saved'),
+                    'title'    => \t('app', 'Congratulations!'),
+                    'message'  => \t('app','Your content has been saved'),
                 ]);
                 return $this->redirect(['update', 'id' => $model->id]);
             } else {
@@ -274,8 +274,8 @@ class UserController extends Controller
                     'type'     => 'danger',
                     'duration' => 3000,
                     'icon'     => 'glyphicon glyphicon-remove-sign',
-                    'title'    => \__t('app', 'An error has occurred!'),
-                    'message'  => \__t('app','Your content has not been saved'),
+                    'title'    => \t('app', 'An error has occurred!'),
+                    'message'  => \t('app','Your content has not been saved'),
                 ]);
             }
         }
@@ -297,7 +297,7 @@ class UserController extends Controller
         if (($model = User::findOne($id)) !== null) {
             return $model;
         } else {
-            throw new NotFoundHttpException(__t('app', 'The requested page does not exist.'));
+            throw new NotFoundHttpException(t('app', 'The requested page does not exist.'));
         }
     }
     
@@ -317,7 +317,7 @@ class UserController extends Controller
                 $row[] = [];
             return $this->renderAjax('_formBlock', ['row' => $row]);
         } else {
-            throw new NotFoundHttpException(__t('app', 'The requested page does not exist.'));
+            throw new NotFoundHttpException(t('app', 'The requested page does not exist.'));
         }
     }
     
@@ -337,7 +337,7 @@ class UserController extends Controller
                 $row[] = [];
             return $this->renderAjax('_formComment', ['row' => $row]);
         } else {
-            throw new NotFoundHttpException(__t('app', 'The requested page does not exist.'));
+            throw new NotFoundHttpException(t('app', 'The requested page does not exist.'));
         }
     }
     
@@ -357,7 +357,7 @@ class UserController extends Controller
                 $row[] = [];
             return $this->renderAjax('_formPost', ['row' => $row]);
         } else {
-            throw new NotFoundHttpException(__t('app', 'The requested page does not exist.'));
+            throw new NotFoundHttpException(t('app', 'The requested page does not exist.'));
         }
     }
     
@@ -377,7 +377,7 @@ class UserController extends Controller
                 $row[] = [];
             return $this->renderAjax('_formProduct', ['row' => $row]);
         } else {
-            throw new NotFoundHttpException(__t('app', 'The requested page does not exist.'));
+            throw new NotFoundHttpException(t('app', 'The requested page does not exist.'));
         }
     }
     
@@ -397,7 +397,7 @@ class UserController extends Controller
                 $row[] = [];
             return $this->renderAjax('_formTerm', ['row' => $row]);
         } else {
-            throw new NotFoundHttpException(__t('app', 'The requested page does not exist.'));
+            throw new NotFoundHttpException(t('app', 'The requested page does not exist.'));
         }
     }
 }

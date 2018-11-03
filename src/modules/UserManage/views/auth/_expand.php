@@ -4,20 +4,20 @@ use kartik\tabs\TabsX;
 use yii\helpers\Url;
 $items = [
     [
-        'label' => '<i class="glyphicon glyphicon-book"></i> '. Html::encode(__t('app', 'AuthItem')),
+        'label' => '<i class="glyphicon glyphicon-book"></i> '. Html::encode(t('app', 'AuthItem')),
         'content' => $this->render('_detail', [
             'model' => $model,
         ]),
     ],
         [
-        'label' => '<i class="glyphicon glyphicon-book"></i> '. Html::encode(__t('app', 'Auth Assignment')),
+        'label' => '<i class="glyphicon glyphicon-book"></i> '. Html::encode(t('app', 'Auth Assignment')),
         'content' => $this->render('_dataAuthAssignment', [
             'model' => $model,
             'row' => $model->authAssignments,
         ]),
     ],
                 [
-        'label' => '<i class="glyphicon glyphicon-book"></i> '. Html::encode(__t('app', 'Auth Item Child')),
+        'label' => '<i class="glyphicon glyphicon-book"></i> '. Html::encode(t('app', 'Auth Item Child')),
         'content' => $this->render('_dataAuthItemChild', [
             'model' => $model,
             'row' => $model->authItemChildren,

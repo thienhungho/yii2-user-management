@@ -8,7 +8,7 @@ use yii\helpers\Html;
 use kartik\export\ExportMenu;
 use kartik\grid\GridView;
 
-$this->title = __t('app', 'Auth Item');
+$this->title = t('app', 'Auth Item');
 $this->params['breadcrumbs'][] = $this->title;
 $search = "$('.search-button').click(function(){
 	$('.search-form').toggle(1000);
@@ -22,7 +22,7 @@ $this->registerJs($search);
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a(__t('app', 'Create Auth Item'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(t('app', 'Create Auth Item'), ['create'], ['class' => 'btn btn-success']) ?>
         <?= Html::a(Yii::t('app', 'Advance Search'), '#', ['class' => 'btn btn-info search-button']) ?>
     </p>
     <div class="search-form" style="display:none">
@@ -67,7 +67,7 @@ $this->registerJs($search);
             'template' => '{save-as-new} {view} {update} {delete}',
             'buttons' => [
                 'save-as-new' => function ($url) {
-                    return Html::a('<span class="glyphicon glyphicon-copy"></span>', $url, ['title' => __t('app', 'Save As New')]);
+                    return Html::a('<span class="glyphicon glyphicon-copy"></span>', $url, ['title' => t('app', 'Save As New')]);
                 },
             ],
         ],
@@ -92,10 +92,10 @@ $this->registerJs($search);
                 'target' => ExportMenu::TARGET_BLANK,
                 'fontAwesome' => true,
                 'dropdownOptions' => [
-                    'label' => __t('app','Full'),
+                    'label' => t('app','Full'),
                     'class' => 'btn btn-default',
                     'itemsBefore' => [
-                        '<li class="dropdown-header">' . __t('app', 'Export All Data') . '</li>',
+                        '<li class="dropdown-header">' . t('app', 'Export All Data') . '</li>',
                     ],
                 ],
             ]) ,

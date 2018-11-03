@@ -23,7 +23,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'rule_name')->widget(\kartik\widgets\Select2::classname(), [
         'data' => \yii\helpers\ArrayHelper::map(\common\modules\auth\AuthRule::find()->orderBy('name')->asArray()->all(), 'name', 'name'),
-        'options' => ['placeholder' => __t('app', 'Choose Auth rule')],
+        'options' => ['placeholder' => t('app', 'Choose Auth rule')],
         'pluginOptions' => [
             'allowClear' => true
         ],
@@ -32,8 +32,8 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'data')->textInput(['placeholder' => 'Data']) ?>
 
     <div class="form-group">
-        <?= Html::submitButton(__t('app', 'Search'), ['class' => 'btn btn-primary']) ?>
-        <?= Html::resetButton(__t('app', 'Reset'), ['class' => 'btn btn-default']) ?>
+        <?= Html::submitButton(t('app', 'Search'), ['class' => 'btn btn-primary']) ?>
+        <?= Html::resetButton(t('app', 'Reset'), ['class' => 'btn btn-default']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

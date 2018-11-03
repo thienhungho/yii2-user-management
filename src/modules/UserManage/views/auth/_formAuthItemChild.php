@@ -27,7 +27,7 @@ echo TabularForm::widget([
             'widgetClass' => \kartik\widgets\Select2::className(),
             'options' => [
                 'data' => \yii\helpers\ArrayHelper::map(\common\modules\auth\AuthItem::find()->orderBy('name')->asArray()->all(), 'name', 'name'),
-                'options' => ['placeholder' => __t('app', 'Choose Auth item')],
+                'options' => ['placeholder' => t('app', 'Choose Auth item')],
             ],
             'columnOptions' => ['width' => '200px']
         ],
@@ -37,7 +37,7 @@ echo TabularForm::widget([
             'value' => function($model, $key) {
                 return
                     Html::hiddenInput('Children[' . $key . '][id]', (!empty($model['id'])) ? $model['id'] : "") .
-                    Html::a('<i class="glyphicon glyphicon-trash"></i>', '#', ['title' =>  __t('app', 'Delete'), 'onClick' => 'delRowAuthItemChild(' . $key . '); return false;', 'id' => 'auth-item-child-del-btn']);
+                    Html::a('<i class="glyphicon glyphicon-trash"></i>', '#', ['title' =>  t('app', 'Delete'), 'onClick' => 'delRowAuthItemChild(' . $key . '); return false;', 'id' => 'auth-item-child-del-btn']);
             },
         ],
     ],
@@ -47,7 +47,7 @@ echo TabularForm::widget([
             'type' => GridView::TYPE_DEFAULT,
             'before' => false,
             'footer' => false,
-            'after' => Html::button('<i class="glyphicon glyphicon-plus"></i>' . __t('app', 'Add Auth Item Child'), ['type' => 'button', 'class' => 'btn btn-success kv-batch-create', 'onClick' => 'addRowAuthItemChild()']),
+            'after' => Html::button('<i class="glyphicon glyphicon-plus"></i>' . t('app', 'Add Auth Item Child'), ['type' => 'button', 'class' => 'btn btn-success kv-batch-create', 'onClick' => 'addRowAuthItemChild()']),
         ]
     ]
 ]);

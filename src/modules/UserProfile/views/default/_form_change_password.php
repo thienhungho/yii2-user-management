@@ -6,7 +6,7 @@
     'addon' => ['prepend' => ['content' => '<span class="fa fa-lock"></span>']],
 ])->passwordInput([
     'maxlength'   => true,
-    'placeholder' => __t('app', 'Password'),
+    'placeholder' => t('app', 'Password'),
     'value'       => '',
 ]) ?>
 
@@ -14,7 +14,7 @@
     'addon' => ['prepend' => ['content' => '<span class="fa fa-lock"></span>']],
 ])->passwordInput([
     'maxlength'   => true,
-    'placeholder' => __t('app', 'New Password'),
+    'placeholder' => t('app', 'New Password'),
     'value'       => '',
 ]) ?>
 
@@ -22,13 +22,13 @@
     'addon' => ['prepend' => ['content' => '<span class="fa fa-lock"></span>']],
 ])->passwordInput([
     'maxlength'   => true,
-    'placeholder' => __t('app', 'Confirm Password'),
+    'placeholder' => t('app', 'Confirm Password'),
     'value'       => '',
 ]) ?>
 
 <div class="form-group">
-    <?= \yii\helpers\Html::submitButton(__t('app', 'Change Password'), ['class' => 'btn green', 'name' => 'change-password-button']) ?>
-    <?= \yii\helpers\Html::resetButton(__t('app', 'Cancel'), ['class' => 'btn default', 'name' => 'change-password-button']) ?>
+    <?= \yii\helpers\Html::submitButton(t('app', 'Change Password'), ['class' => 'btn green', 'name' => 'change-password-button']) ?>
+    <?= \yii\helpers\Html::resetButton(t('app', 'Cancel'), ['class' => 'btn default', 'name' => 'change-password-button']) ?>
 </div>
 
 <?php \kartik\form\ActiveForm::end(); ?>

@@ -8,14 +8,14 @@ use kartik\grid\GridView;
 /* @var $model common\modules\auth\AuthItem */
 
 $this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => __t('app', 'Auth Item'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => t('app', 'Auth Item'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="auth-item-view">
 
     <div class="row">
         <div class="col-sm-9">
-            <h2><?= __t('app', 'Auth Item').' '. Html::encode($this->title) ?></h2>
+            <h2><?= t('app', 'Auth Item').' '. Html::encode($this->title) ?></h2>
         </div>
     </div>
 
@@ -27,7 +27,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'description:ntext',
         [
                 'attribute' => 'ruleName.name',
-                'label' => __t('app', 'Rule Name')
+                'label' => t('app', 'Rule Name')
             ],
         'data',
     ];
@@ -49,7 +49,7 @@ if($providerAuthAssignment->totalCount){
         'dataProvider' => $providerAuthAssignment,
         'panel' => [
             'type' => GridView::TYPE_PRIMARY,
-            'heading' => Html::encode(__t('app', 'Auth Assignment')),
+            'heading' => Html::encode(t('app', 'Auth Assignment')),
         ],
         'panelHeadingTemplate' => '<h4>{heading}</h4>{summary}',
         'toggleData' => false,
@@ -69,7 +69,7 @@ if($providerAuthItemChild->totalCount){
         'dataProvider' => $providerAuthItemChild,
         'panel' => [
             'type' => GridView::TYPE_PRIMARY,
-            'heading' => Html::encode(__t('app', 'Auth Item Child')),
+            'heading' => Html::encode(t('app', 'Auth Item Child')),
         ],
         'panelHeadingTemplate' => '<h4>{heading}</h4>{summary}',
         'toggleData' => false,

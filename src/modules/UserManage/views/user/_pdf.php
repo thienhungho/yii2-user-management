@@ -8,14 +8,14 @@ use kartik\grid\GridView;
 /* @var $model thienhungho\UserManagement\modules\UserBase\User */
 
 $this->title = $model->username;
-$this->params['breadcrumbs'][] = ['label' => __t('app', 'User'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => t('app', 'User'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="user-view">
 
     <div class="row">
         <div class="col-sm-9">
-            <h2><?= __t('app', 'User').' '. Html::encode($this->title) ?></h2>
+            <h2><?= t('app', 'User').' '. Html::encode($this->title) ?></h2>
         </div>
     </div>
 
@@ -62,7 +62,7 @@ if($providerBlock->totalCount){
         'dataProvider' => $providerBlock,
         'panel' => [
             'type' => GridView::TYPE_PRIMARY,
-            'heading' => Html::encode(__t('app', 'Block')),
+            'heading' => Html::encode(t('app', 'Block')),
         ],
         'panelHeadingTemplate' => '<h4>{heading}</h4>{summary}',
         'toggleData' => false,
@@ -93,7 +93,7 @@ if($providerComment->totalCount){
         'dataProvider' => $providerComment,
         'panel' => [
             'type' => GridView::TYPE_PRIMARY,
-            'heading' => Html::encode(__t('app', 'Comment')),
+            'heading' => Html::encode(t('app', 'Comment')),
         ],
         'panelHeadingTemplate' => '<h4>{heading}</h4>{summary}',
         'toggleData' => false,
@@ -124,7 +124,7 @@ if($providerPost->totalCount){
         'dataProvider' => $providerPost,
         'panel' => [
             'type' => GridView::TYPE_PRIMARY,
-            'heading' => Html::encode(__t('app', 'Post')),
+            'heading' => Html::encode(t('app', 'Post')),
         ],
         'panelHeadingTemplate' => '<h4>{heading}</h4>{summary}',
         'toggleData' => false,
@@ -163,7 +163,7 @@ if($providerProduct->totalCount){
         'dataProvider' => $providerProduct,
         'panel' => [
             'type' => GridView::TYPE_PRIMARY,
-            'heading' => Html::encode(__t('app', 'Product')),
+            'heading' => Html::encode(t('app', 'Product')),
         ],
         'panelHeadingTemplate' => '<h4>{heading}</h4>{summary}',
         'toggleData' => false,
@@ -192,7 +192,7 @@ if($providerTerm->totalCount){
         'dataProvider' => $providerTerm,
         'panel' => [
             'type' => GridView::TYPE_PRIMARY,
-            'heading' => Html::encode(__t('app', 'Term')),
+            'heading' => Html::encode(t('app', 'Term')),
         ],
         'panelHeadingTemplate' => '<h4>{heading}</h4>{summary}',
         'toggleData' => false,

@@ -1,7 +1,7 @@
 <?php
 
-$this->title = __t('app', 'Account Settings');
-$this->params['breadcrumbs'][] = ['label' => __t('app', 'Account Settings'), 'url' => ['index']];
+$this->title = t('app', 'Account Settings');
+$this->params['breadcrumbs'][] = ['label' => t('app', 'Account Settings'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $user->username;
 
 ?>
@@ -37,7 +37,7 @@ $this->params['breadcrumbs'][] = $user->username;
 <!--                        </li>-->
                         <li class="active">
                             <a href="<?= \yii\helpers\Url::to('user-profile') ?>">
-                                <i class="icon-settings"></i> <?= __t('app', 'Account Settings') ?> </a>
+                                <i class="icon-settings"></i> <?= t('app', 'Account Settings') ?> </a>
                         </li>
 <!--                        <li>-->
 <!--                            <a href="page_user_profile_1_help.html">-->
@@ -67,7 +67,7 @@ $this->params['breadcrumbs'][] = $user->username;
 <!--                </div>-->
                 <!-- END STAT -->
                 <div>
-                    <h4 class="profile-desc-title"><?= __t('app', 'About') ?></h4>
+                    <h4 class="profile-desc-title"><?= t('app', 'About') ?></h4>
                     <span class="profile-desc-text"> <?= $user->bio ?> </span>
 <!--                    <div class="margin-top-20 profile-desc-link">-->
 <!--                        <i class="fa fa-globe"></i>-->
@@ -94,20 +94,20 @@ $this->params['breadcrumbs'][] = $user->username;
                         <div class="portlet-title tabbable-line">
                             <div class="caption caption-md">
                                 <i class="icon-globe theme-font hide"></i>
-                                <span class="caption-subject font-blue-madison bold uppercase"><?= __t('app', 'Profile Account') ?></span>
+                                <span class="caption-subject font-blue-madison bold uppercase"><?= t('app', 'Profile Account') ?></span>
                             </div>
                             <ul class="nav nav-tabs">
                                 <li class="active">
-                                    <a href="#tab_1_1" data-toggle="tab"><?= __t('app', 'Profile Info') ?></a>
+                                    <a href="#tab_1_1" data-toggle="tab"><?= t('app', 'Profile Info') ?></a>
                                 </li>
                                 <li>
-                                    <a href="#tab_1_2" data-toggle="tab"><?= __t('app', 'Change Avatar') ?></a>
+                                    <a href="#tab_1_2" data-toggle="tab"><?= t('app', 'Change Avatar') ?></a>
                                 </li>
                                 <li>
-                                    <a href="#tab_1_3" data-toggle="tab"><?= __t('app', 'Change Password') ?></a>
+                                    <a href="#tab_1_3" data-toggle="tab"><?= t('app', 'Change Password') ?></a>
                                 </li>
                                 <li>
-                                    <a href="#tab_1_4" data-toggle="tab"><?= __t('app', 'Security Settings') ?></a>
+                                    <a href="#tab_1_4" data-toggle="tab"><?= t('app', 'Security Settings') ?></a>
                                 </li>
                             </ul>
                         </div>

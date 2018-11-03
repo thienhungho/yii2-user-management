@@ -93,20 +93,20 @@ $this->registerJs($search);
             'attribute'           => 'status',
             'value'               => function($model, $key, $index, $column) {
                 if ($model->status == \thienhungho\UserManagement\modules\UserBase\User::STATUS_DELETED) {
-                    return '<span class="label-danger label">' . __t('app', 'Deleted') . '</span>';
+                    return '<span class="label-danger label">' . t('app', 'Deleted') . '</span>';
                 } elseif ($model->status == \thienhungho\UserManagement\modules\UserBase\User::STATUS_ACTIVE) {
-                    return '<span class="label-success label">' . __t('app', 'Active') . '</span>';
+                    return '<span class="label-success label">' . t('app', 'Active') . '</span>';
                 }
             },
             'filterType'          => GridView::FILTER_SELECT2,
             'filter'              => \yii\helpers\ArrayHelper::map([
                 [
                     'value' => \thienhungho\UserManagement\modules\UserBase\User::STATUS_DELETED,
-                    'name'  => __t('app', 'Deleted'),
+                    'name'  => t('app', 'Deleted'),
                 ],
                 [
                     'value' => \thienhungho\UserManagement\modules\UserBase\User::STATUS_ACTIVE,
-                    'name'  => __t('app', 'Active'),
+                    'name'  => t('app', 'Active'),
                 ],
             ], 'value', 'name'),
             'filterWidgetOptions' => [
@@ -140,20 +140,20 @@ $this->registerJs($search);
             <?= \kartik\widgets\Select2::widget([
                 'name'    => 'action',
                 'data'    => [
-                    ACTION_DELETE                                     => __t('app', 'Delete'),
-                    \thienhungho\UserManagement\modules\UserBase\User::STATUS_ACTIVE => __t('app', slug_to_text(STATUS_ACTIVE)),
+                    ACTION_DELETE                                     => t('app', 'Delete'),
+                    \thienhungho\UserManagement\modules\UserBase\User::STATUS_ACTIVE => t('app', slug_to_text(STATUS_ACTIVE)),
                 ],
                 'theme'   => \kartik\widgets\Select2::THEME_BOOTSTRAP,
                 'options' => [
                     'multiple'    => false,
-                    'placeholder' => __t('app', 'Bulk Actions ...'),
+                    'placeholder' => t('app', 'Bulk Actions ...'),
                 ],
             ]); ?>
         </div>
         <div class="col-lg-10">
-            <?= Html::submitButton(__t('app', 'Apply'), [
+            <?= Html::submitButton(t('app', 'Apply'), [
                 'class'        => 'btn btn-primary',
-                'data-confirm' => __t('app', 'Are you want to do this?'),
+                'data-confirm' => t('app', 'Are you want to do this?'),
             ]) ?>
         </div>
     </div>

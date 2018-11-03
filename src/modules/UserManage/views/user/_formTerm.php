@@ -36,7 +36,7 @@ echo TabularForm::widget([
             'value' => function($model, $key) {
                 return
                     Html::hiddenInput('Children[' . $key . '][id]', (!empty($model['id'])) ? $model['id'] : "") .
-                    Html::a('<i class="glyphicon glyphicon-trash"></i>', '#', ['title' =>  __t('app', 'Delete'), 'onClick' => 'delRowTerm(' . $key . '); return false;', 'id' => 'term-del-btn']);
+                    Html::a('<i class="glyphicon glyphicon-trash"></i>', '#', ['title' =>  t('app', 'Delete'), 'onClick' => 'delRowTerm(' . $key . '); return false;', 'id' => 'term-del-btn']);
             },
         ],
     ],
@@ -46,7 +46,7 @@ echo TabularForm::widget([
             'type' => GridView::TYPE_DEFAULT,
             'before' => false,
             'footer' => false,
-            'after' => Html::button('<i class="glyphicon glyphicon-plus"></i>' . __t('app', 'Add Term'), ['type' => 'button', 'class' => 'btn btn-success kv-batch-create', 'onClick' => 'addRowTerm()']),
+            'after' => Html::button('<i class="glyphicon glyphicon-plus"></i>' . t('app', 'Add Term'), ['type' => 'button', 'class' => 'btn btn-success kv-batch-create', 'onClick' => 'addRowTerm()']),
         ]
     ]
 ]);

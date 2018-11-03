@@ -43,7 +43,7 @@ use yii\widgets\ActiveForm;
         'ajaxConversion' => true,
         'options' => [
             'pluginOptions' => [
-                'placeholder' => __t('app', 'Choose Birth Date'),
+                'placeholder' => t('app', 'Choose Birth Date'),
                 'autoclose' => true
             ]
         ],
@@ -54,8 +54,8 @@ use yii\widgets\ActiveForm;
     <?php /* echo $form->field($model, 'status')->textInput(['placeholder' => 'Status']) */ ?>
 
     <div class="form-group">
-        <?= Html::submitButton(__t('app', 'Search'), ['class' => 'btn btn-primary']) ?>
-        <?= Html::resetButton(__t('app', 'Reset'), ['class' => 'btn btn-default']) ?>
+        <?= Html::submitButton(t('app', 'Search'), ['class' => 'btn btn-primary']) ?>
+        <?= Html::resetButton(t('app', 'Reset'), ['class' => 'btn btn-default']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>
