@@ -1,7 +1,7 @@
 <?php
 namespace thienhungho\UserManagement\modules\UserManage;
 
-use common\models\User;
+use thienhungho\UserManagement\models\User;
 use Yii;
 use yii\base\Model;
 
