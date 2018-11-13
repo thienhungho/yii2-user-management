@@ -43,8 +43,8 @@ class CreateUserForm extends Model
             ['avatar', 'file'],
             [['birth_date'], 'safe'],
             [['username', 'email', 'full_name', 'job', 'company', 'tax_number', 'address', 'phone', 'facebook_url', 'password'], 'string', 'max' => 255],
-            [['username'], 'unique', 'targetClass' => '\common\models\User', 'message' => t('app', 'This username has already been taken.')],
-            [['email'], 'unique', 'targetClass' => '\common\models\User', 'message' => t('app', 'This email has already been taken.')],
+            [['username'], 'unique', 'targetClass' => '\thienhungho\UserManagement\models\User', 'message' => t('app', 'This username has already been taken.')],
+            [['email'], 'unique', 'targetClass' => '\thienhungho\UserManagement\models\User', 'message' => t('app', 'This email has already been taken.')],
             [['email'], 'email'],
             ['avatar', 'default', 'value' => User::DEFAULT_AVATAR],
         ];

@@ -66,7 +66,7 @@ $this->registerJs($search);
             'attribute' => 'avatar',
             'value'     => function($model, $key, $index, $column) {
                 return Html::a(
-                    '<img style="max-width: 50px;" src=/' . \common\modules\media\Media::getOtherSizePath('thumbnail', $model->avatar) . '>',
+                    '<img style="max-width: 50px;" src=/' . get_other_img_size_path('thumbnail', $model->avatar) . '>',
                     \yii\helpers\Url::to(['/']), [
                     'data-pjax' => '0',
                     'target'    => '_blank',
@@ -92,20 +92,20 @@ $this->registerJs($search);
             'format'              => 'raw',
             'attribute'           => 'status',
             'value'               => function($model, $key, $index, $column) {
-                if ($model->status == \thienhungho\UserManagement\modules\UserBase\User::STATUS_DELETED) {
+                if ($model->status == \thienhungho\UserManagement\models\User::STATUS_DELETED) {
                     return '<span class="label-danger label">' . t('app', 'Deleted') . '</span>';
-                } elseif ($model->status == \thienhungho\UserManagement\modules\UserBase\User::STATUS_ACTIVE) {
+                } elseif ($model->status == \thienhungho\UserManagement\models\User::STATUS_ACTIVE) {
                     return '<span class="label-success label">' . t('app', 'Active') . '</span>';
                 }
             },
             'filterType'          => GridView::FILTER_SELECT2,
             'filter'              => \yii\helpers\ArrayHelper::map([
                 [
-                    'value' => \thienhungho\UserManagement\modules\UserBase\User::STATUS_DELETED,
+                    'value' => \thienhungho\UserManagement\models\User::STATUS_DELETED,
                     'name'  => t('app', 'Deleted'),
                 ],
                 [
-                    'value' => \thienhungho\UserManagement\modules\UserBase\User::STATUS_ACTIVE,
+                    'value' => \thienhungho\UserManagement\models\User::STATUS_ACTIVE,
                     'name'  => t('app', 'Active'),
                 ],
             ], 'value', 'name'),
@@ -141,7 +141,7 @@ $this->registerJs($search);
                 'name'    => 'action',
                 'data'    => [
                     ACTION_DELETE                                     => t('app', 'Delete'),
-                    \thienhungho\UserManagement\modules\UserBase\User::STATUS_ACTIVE => t('app', slug_to_text(STATUS_ACTIVE)),
+                    \thienhungho\UserManagement\models\User::STATUS_ACTIVE => t('app', slug_to_text(STATUS_ACTIVE)),
                 ],
                 'theme'   => \kartik\widgets\Select2::THEME_BOOTSTRAP,
                 'options' => [

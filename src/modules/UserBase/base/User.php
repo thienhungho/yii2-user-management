@@ -2,11 +2,11 @@
 
 namespace thienhungho\UserManagement\modules\UserBase\base;
 
-use common\modules\blocks\Block;
-use common\modules\comments\Comment;
-use BaseApp\cms\modules\PostBase\Post;
-use BaseApp\ecommerce\modules\ProductBase\Product;
-use \BaseApp\termsystem\modules\TermBase\Term;
+use thienhungho\Block\models\Block;
+use thienhungho\CommentManagement\models\Comment;
+use thienhungho\PostManagement\models\Post;
+use thienhungho\ProductManagement\models\Product;
+use thienhungho\TermManagement\models\Term;
 use Yii;
 use yii\behaviors\TimestampBehavior;
 
