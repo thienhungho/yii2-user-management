@@ -7,7 +7,7 @@ namespace thienhungho\UserManagement\modules\UserBase\query;
  *
  * @see User
  */
-class UserQuery extends \yii\db\ActiveQuery
+class UserQuery extends \thienhungho\ActiveQuery\models\ActiveQuery
 {
     /*public function active()
     {

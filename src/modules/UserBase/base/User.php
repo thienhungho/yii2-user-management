@@ -4,7 +4,7 @@ namespace thienhungho\UserManagement\modules\UserBase\base;
 
 use thienhungho\Block\models\Block;
 use thienhungho\CommentManagement\models\Comment;
-use thienhungho\PostManagement\models\Post;
+use thienhungho\PostManagement\models\ActiveQuery;
 use thienhungho\ProductManagement\models\Product;
 use thienhungho\TermManagement\models\Term;
 use Yii;
@@ -148,7 +148,7 @@ class User extends \yii\db\ActiveRecord
      */
     public function getPosts()
     {
-        return $this->hasMany(Post::className(), ['author' => 'id']);
+        return $this->hasMany(ActiveQuery::className(), ['author' => 'id']);
     }
         
     /**
