@@ -37,12 +37,16 @@ $this->registerJs($search);
 <div class="user-index">
     <?php
     $gridColumn = [
-        ['class' => 'yii\grid\SerialColumn'],
         [
-            'class'           => 'yii\grid\CheckboxColumn',
+            'class'  => \kartik\grid\SerialColumn::className(),
+            'vAlign' => GridView::ALIGN_MIDDLE,
+        ],
+        [
+            'class'           => \kartik\grid\CheckboxColumn::className(),
             'checkboxOptions' => function($data) {
                 return ['value' => $data->id];
             },
+            'vAlign'          => GridView::ALIGN_MIDDLE,
         ],
         [
             'class'         => 'kartik\grid\ExpandRowColumn',
@@ -61,7 +65,7 @@ $this->registerJs($search);
             'visible'   => false,
         ],
         [
-            'class'     => \yii\grid\DataColumn::className(),
+            'class'     => \kartik\grid\DataColumn::className(),
             'format'    => 'raw',
             'attribute' => 'avatar',
             'value'     => function($model, $key, $index, $column) {
@@ -72,25 +76,42 @@ $this->registerJs($search);
                     'target'    => '_blank',
                 ]);
             },
+            'vAlign'    => GridView::ALIGN_MIDDLE,
         ],
-        'username',
-        'email:email',
-        'full_name',
+        [
+            'attribute' => 'username',
+            'vAlign'    => GridView::ALIGN_MIDDLE,
+        ],
+        [
+            'attribute' => 'email',
+            'format'    => 'email',
+            'vAlign'    => GridView::ALIGN_MIDDLE,
+        ],
+        [
+            'attribute' => 'full_name',
+            'vAlign'    => GridView::ALIGN_MIDDLE,
+        ],
         [
             'format'    => 'raw',
             'attribute' => 'phone',
             'value'     => function($model, $key, $index, $column) {
                 return Html::a($model->phone, 'tel:' . $model->phone);
             },
+            'vAlign'    => GridView::ALIGN_MIDDLE,
         ],
-        'birth_date',
+        [
+            'attribute' => 'birth_date',
+            'vAlign'    => GridView::ALIGN_MIDDLE,
+        ],
         [
             'format'    => 'url',
             'attribute' => 'facebook_url',
+            'vAlign'    => GridView::ALIGN_MIDDLE,
         ],
         [
             'format'              => 'raw',
             'attribute'           => 'status',
+            'vAlign'              => GridView::ALIGN_MIDDLE,
             'value'               => function($model, $key, $index, $column) {
                 if ($model->status == \thienhungho\UserManagement\models\User::STATUS_DELETED) {
                     return '<span class="label-danger label">' . t('app', 'Deleted') . '</span>';
@@ -118,7 +139,12 @@ $this->registerJs($search);
             ],
         ],
     ];
-    $gridColumn[] = grid_view_default_active_column_cofig();
+    $active_column = grid_view_default_active_column_cofig();
+    $active_column['buttons']['change-password'] = function($url) {
+        return \yii\helpers\Html::a('<span class="btn btn-xs purple"><span class="glyphicon glyphicon-lock"></span></span>', $url, ['title' => t('app', 'Change Password')]);
+    };
+    $active_column['template'] = '{view} {save-as-new} {update} {change-password} {delete}';
+    $gridColumn[] = $active_column;
     ?>
     <?= GridView::widget([
         'dataProvider'   => $dataProvider,
@@ -140,7 +166,7 @@ $this->registerJs($search);
             <?= \kartik\widgets\Select2::widget([
                 'name'    => 'action',
                 'data'    => [
-                    ACTION_DELETE                                     => t('app', 'Delete'),
+                    ACTION_DELETE                                          => t('app', 'Delete'),
                     \thienhungho\UserManagement\models\User::STATUS_ACTIVE => t('app', slug_to_text(STATUS_ACTIVE)),
                 ],
                 'theme'   => \kartik\widgets\Select2::THEME_BOOTSTRAP,

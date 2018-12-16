@@ -2,6 +2,8 @@
 
 namespace thienhungho\UserManagement\modules\UserManage\controllers;
 
+use thienhungho\UserManagement\models\ChangePasswordForm;
+use thienhungho\UserManagement\models\ChangePasswordFormForAdmin;
 use Yii;
 use thienhungho\UserManagement\modules\UserBase\User;
 use thienhungho\UserManagement\modules\UserManage\search\UserSearch;
@@ -127,33 +129,42 @@ class UserController extends Controller
             $model = $this->findModel($id);
         }
 
-        if (in_array('admin', $model->getRole()) && !is_role('admin')) {
+        if (!is_role('admin')) {
             throw new \yii\web\HttpException(403, t('app', 'You are not allowed to perform this action.'));
         }
 
         if ($model->loadAll(request()->post())) {
-            $model->setPassword($model->password_hash);
             if ($model->saveAll()) {
-                set_flash('success_create_new_user', $array = [
-                    'type'     => 'success',
-                    'duration' => 3000,
-                    'icon'     => 'glyphicon glyphicon-ok-sign',
-                    'title'    => \t('app', 'Congratulations!'),
-                    'message'  => \t('app','Your content has been saved'),
-                ]);
+                set_flash_has_been_saved();
                 return $this->redirect(['update', 'id' => $model->id]);
             } else {
-                set_flash('error_user_has_not_been_saved', $array = [
-                    'type'     => 'danger',
-                    'duration' => 3000,
-                    'icon'     => 'glyphicon glyphicon-remove-sign',
-                    'title'    => \t('app', 'An error has occurred!'),
-                    'message'  => \t('app','Your content has not been saved'),
-                ]);
+                set_flash_has_not_been_saved();
             }
         }
 
         return $this->render('update', [
+            'model' => $model,
+        ]);
+    }
+
+    /**
+     * @return string|\yii\web\Response
+     * @throws \yii\base\Exception
+     */
+    public function actionChangePassword($id)
+    {
+        $model = $this->findModel($id);
+        $changePasswordForm = new ChangePasswordFormForAdmin();
+        if ($changePasswordForm->load(request()->post())) {
+            if ($changePasswordForm->changePassword()) {
+                set_flash_has_been_saved();
+            } else {
+                set_flash_has_not_been_saved();
+            }
+        }
+
+        return $this->render('change-password', [
+            'changePasswordForm' => $changePasswordForm,
             'model' => $model,
         ]);
     }

@@ -32,13 +32,6 @@ $model->password_hash = '';
         'placeholder' => t('app', 'Email'),
     ]) ?>
 
-    <?= $form->field($model, 'password_hash', [
-        'addon' => ['prepend' => ['content' => '<span class="fa fa-envelope"></span>']],
-    ])->passwordInput([
-        'maxlength'   => true,
-        'placeholder' => t('app', 'Password'),
-    ]) ?>
-
     <?= $form->field($model, 'phone', [
         'addon' => ['prepend' => ['content' => '<span class="fa fa-phone"></span>']],
     ])->textInput([
