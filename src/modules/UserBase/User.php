@@ -13,6 +13,7 @@ use yii\web\IdentityInterface;
 class User extends BaseUser implements IdentityInterface
 {
     const STATUS_DELETED = 0;
+    const STATUS_PENDING = 5;
     const STATUS_ACTIVE = 10;
     const DEFAULT_AVATAR = 'uploads/default-avatar.png';
 

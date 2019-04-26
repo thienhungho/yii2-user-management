@@ -295,6 +295,45 @@ class UserController extends Controller
             'model' => $model,
         ]);
     }
+
+    /**
+     * @return \yii\web\Response
+     * @throws NotFoundHttpException
+     * @throws \yii\db\Exception
+     */
+    public function actionBulk()
+    {
+        $action = request()->post('action');
+        $ids = request()->post('selection');
+        if (!empty($ids)) {
+            if ($action == ACTION_DELETE) {
+                foreach ($ids as $id) {
+                    $model = $this->findModel($id);
+                    if ($model->deleteWithRelated()) {
+                        set_flash_success_delete_content();
+                    } else {
+                        set_flash_error_delete_content();
+                    }
+                }
+            } elseif (in_array($action, [
+                \thienhungho\UserManagement\models\User::STATUS_ACTIVE,
+                \thienhungho\UserManagement\models\User::STATUS_DELETED,
+                \thienhungho\UserManagement\models\User::STATUS_PENDING,
+            ])) {
+                foreach ($ids as $id) {
+                    $model = $this->findModel($id);
+                    $model->status = $action;
+                    if ($model->save()) {
+                        set_flash_has_been_saved();
+                    } else {
+                        set_flash_has_not_been_saved();
+                    }
+                }
+            }
+        }
+
+        return $this->goBack(request()->referrer);
+    }
     
     /**
      * Finds the User model based on its primary key value.

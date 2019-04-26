@@ -33,7 +33,7 @@ $this->registerJs($search);
         <?= $this->render('_search', ['model' => $searchModel]); ?>
     </div>
 </div>
-
+<?= Html::beginForm(['bulk']) ?>
 <div class="user-index">
     <?php
     $gridColumn = [
@@ -168,6 +168,7 @@ $this->registerJs($search);
                 'data'    => [
                     ACTION_DELETE                                          => t('app', 'Delete'),
                     \thienhungho\UserManagement\models\User::STATUS_ACTIVE => t('app', slug_to_text(STATUS_ACTIVE)),
+                    \thienhungho\UserManagement\models\User::STATUS_PENDING => t('app', slug_to_text(STATUS_PENDING))
                 ],
                 'theme'   => \kartik\widgets\Select2::THEME_BOOTSTRAP,
                 'options' => [
@@ -184,3 +185,5 @@ $this->registerJs($search);
         </div>
     </div>
 </div>
+
+<?= Html::endForm() ?>
