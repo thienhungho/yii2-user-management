@@ -1,7 +1,6 @@
 <?php
 namespace thienhungho\UserManagement\models;
 
-use \thienhungho\UserManagement\models\User;
 use Yii;
 use yii\base\Model;
 
@@ -83,7 +82,7 @@ class LoginForm extends Model
     protected function getUser()
     {
         if ($this->_user === null) {
-            $user = User::findByUsername($this->username);
+            $user = \thienhungho\UserManagement\models\User::findByUsername($this->username);
             if (is_role(['admin', 'manager', 'dev'], $user)) {
                 $this->_user = $user;
             }
