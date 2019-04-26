@@ -31,8 +31,8 @@ class m181102_120101_user extends \yii\db\Migration
             'birth_date' => $this->date(),
             'facebook_url' => $this->string(255),
             'status' => $this->smallInteger(6)->notNull()->defaultValue(10),
-            'created_at' => $this->integer(11)->notNull(),
-            'updated_at' => $this->integer(11)->notNull(),
+            'created_at' => $this->timestamp()->notNull()->defaultValue(CURRENT_TIMESTAMP),
+            'updated_at' => $this->timestamp()->notNull()->defaultValue(CURRENT_TIMESTAMP),
         ], $tableOptions);
 
     }
