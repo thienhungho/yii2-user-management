@@ -83,9 +83,7 @@ class LoginForm extends Model
     {
         if ($this->_user === null) {
             $user = \thienhungho\UserManagement\models\User::findByUsername($this->username);
-            if (is_role(['admin', 'manager', 'dev'], $user)) {
-                $this->_user = $user;
-            }
+            $this->_user = $user;
         }
 
         return $this->_user;
