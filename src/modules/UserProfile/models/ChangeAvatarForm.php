@@ -1,4 +1,5 @@
 <?php
+
 namespace thienhungho\UserManagement\modules\UserProfile\models;
 
 use thienhungho\UserManagement\modules\UserBase\User;
@@ -25,7 +26,7 @@ class ChangeAvatarForm extends Model
         return [
             // username and password are both required
             [['username'], 'required'],
-            ['avatar', 'file'],
+            [['avatar'], 'file'],
         ];
     }
 
@@ -53,10 +54,13 @@ class ChangeAvatarForm extends Model
             if (!empty($avatar)) {
                 $user->avatar = $avatar;
             }
-            $user->save();
-            return true;
+            if ($user->save()) {
+                return true;
+            } else {
+                return false;
+            }
         }
-        
+
         return false;
     }
 

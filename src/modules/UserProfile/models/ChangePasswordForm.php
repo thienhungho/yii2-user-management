@@ -1,7 +1,7 @@
 <?php
 namespace thienhungho\UserManagement\modules\UserProfile\models;
 
-use thienhungho\UserManagement\modules\UserBase\User;
+use thienhungho\UserManagement\models\User;
 use thienhungho\UserManagement\modules\UserQueue\models\ChangePasswordJob;
 use Yii;
 use yii\base\Model;
