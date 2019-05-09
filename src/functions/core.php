@@ -165,3 +165,33 @@ function set_current_user_setting($section, $key, $value)
 {
     return set_user_setting(get_current_user_id(), $section, $key, $value);
 }
+
+/**
+ * @param $id
+ * @return array|\thienhungho\UserManagement\models\User|\thienhungho\UserManagement\modules\UserBase\query\User|\yii\db\ActiveRecord|null
+ */
+function get_user_by_id($id) {
+    return \thienhungho\UserManagement\models\User::find()
+        ->where(['id' => $id])
+        ->one();
+}
+
+/**
+ * @param $username
+ * @return array|\thienhungho\UserManagement\models\User|\thienhungho\UserManagement\modules\UserBase\query\User|\yii\db\ActiveRecord|null
+ */
+function get_user_by_username($username) {
+    return \thienhungho\UserManagement\models\User::find()
+        ->where(['username' => $username])
+        ->one();
+}
+
+/**
+ * @param $email
+ * @return array|\thienhungho\UserManagement\models\User|\thienhungho\UserManagement\modules\UserBase\query\User|\yii\db\ActiveRecord|null
+ */
+function get_user_by_email($email) {
+    return \thienhungho\UserManagement\models\User::find()
+        ->where(['email' => $email])
+        ->one();
+}

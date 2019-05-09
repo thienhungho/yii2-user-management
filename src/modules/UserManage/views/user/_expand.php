@@ -30,13 +30,13 @@ $items = [
             'row' => $model->posts,
         ]),
     ],
-            [
-        'label' => '<i class="glyphicon glyphicon-book"></i> '. Html::encode(Yii::t('app', 'Product')),
-        'content' => $this->render('_dataProduct', [
-            'model' => $model,
-            'row' => $model->products,
-        ]),
-    ],
+//            [
+//        'label' => '<i class="glyphicon glyphicon-book"></i> '. Html::encode(Yii::t('app', 'Product')),
+//        'content' => $this->render('_dataProduct', [
+//            'model' => $model,
+//            'row' => $model->products,
+//        ]),
+//    ],
             [
         'label' => '<i class="glyphicon glyphicon-book"></i> '. Html::encode(Yii::t('app', 'Term')),
         'content' => $this->render('_dataTerm', [

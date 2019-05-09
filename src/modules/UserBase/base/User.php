@@ -63,7 +63,7 @@ class User extends \yii\db\ActiveRecord
             'blocks',
             'comments',
             'posts',
-            'products',
+//            'products',
             'terms'
         ];
     }
