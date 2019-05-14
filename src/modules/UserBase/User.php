@@ -32,7 +32,7 @@ class User extends BaseUser implements IdentityInterface
             [['username'], 'unique'],
             [['email'], 'unique'],
             [['email'], 'email'],
-            ['avatar', 'default', 'value' => self::DEFAULT_AVATAR],
+            [['avatar'], 'default', 'value' => self::DEFAULT_AVATAR],
             [['password_reset_token'], 'unique'],
         ];
     }
@@ -225,7 +225,7 @@ class User extends BaseUser implements IdentityInterface
             $img = upload_img('User[avatar]');
             if (!empty($img)) {
                 $this->avatar = $img;
-            } elseif(empty($img) && !$this->isNewRecord) {
+            } elseif(empty($img) && !$this->isNewRecord && empty($this->avatar)) {
                 $model = static::findOne(['id' => $this->id]);
                 if ($model) {
                     $this->avatar = $model->avatar;

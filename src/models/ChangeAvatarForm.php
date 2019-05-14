@@ -1,13 +1,12 @@
 <?php
 namespace thienhungho\UserManagement\models;
 
-use thienhungho\UserManagement\modules\UserBase\User;
 use Yii;
 use yii\base\Model;
 
 /**
  * Class ChangeAvatarForm
- * @package thienhungho\UserManagement\modules\UserProfile\models
+ * @package common\models
  */
 class ChangeAvatarForm extends Model
 {
@@ -39,11 +38,10 @@ class ChangeAvatarForm extends Model
             'avatar' => Yii::t('app', 'Avatar'),
         ];
     }
-
     /**
-     * @return bool
-     * @throws \yii\base\Exception
-     * @throws \yii\base\InvalidConfigException
+     * Logs in a user using the provided username and password.
+     *
+     * @return bool whether the user is logged in successfully
      */
     public function changeAvatar()
     {
@@ -56,7 +54,7 @@ class ChangeAvatarForm extends Model
             $user->save();
             return true;
         }
-        
+
         return false;
     }
 
